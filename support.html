@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CineLocal Support — FAQs, troubleshooting, and help for your personal movie library app.">
+  <title>Support — CineLocal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html">
+        <span class="logo-icon">▶</span>
+        <span>CineLocal</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="support.html" class="active">Support</a>
+        <a href="privacy.html">Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <header class="page-header">
+      <h1>Support</h1>
+      <p>Answers to common questions, troubleshooting tips, and how to get in touch.</p>
+    </header>
+
+    <section>
+      <div class="section-title" style="margin-bottom: 1.5rem;">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-list">
+        <article class="faq-item">
+          <h3>Is CineLocal free?</h3>
+          <p>
+            Pricing will be listed on the App Store when the app is released. CineLocal does not require
+            a subscription to store or play your own files.
+          </p>
+        </article>
+        <article class="faq-item">
+          <h3>Do I need an account?</h3>
+          <p>
+            No. CineLocal has no sign-in, no cloud sync, and no server-side library. Everything runs locally on your iPhone.
+          </p>
+        </article>
+        <article class="faq-item">
+          <h3>Do I need a TMDB API key?</h3>
+          <p>
+            No — it's optional. Without a key, CineLocal uses Apple's public movie search API for metadata.
+            For the richest posters and details, add a free TMDB API key in Settings.
+            Get one at <a href="https://www.themoviedb.org/settings/api" rel="noopener">themoviedb.org</a>.
+          </p>
+        </article>
+        <article class="faq-item">
+          <h3>What video formats are supported?</h3>
+          <p>
+            CineLocal uses native iOS playback, which handles MP4, MOV, and M4V very well, plus many common AVI files.
+            MKV and unusual codecs may require re-encoding to MP4/H.264 on a computer for best results.
+          </p>
+        </article>
+        <article class="faq-item">
+          <h3>Where are my movies stored?</h3>
+          <p>
+            Imported videos and poster images are copied into the App's secure sandbox on your device.
+            They are not uploaded anywhere and remain available offline after import.
+          </p>
+        </article>
+        <article class="faq-item">
+          <h3>Metadata didn't match my movie — what should I do?</h3>
+          <p>
+            Use descriptive filenames like <code>Inception (2010).mkv</code> or <code>The Matrix 1999 1080p.mp4</code>.
+            Open the movie's detail view and tap <strong>Refresh Metadata</strong> to try again.
+          </p>
+        </article>
+        <article class="faq-item">
+          <h3>Can I use AirPlay or Picture-in-Picture?</h3>
+          <p>
+            Yes. Native playback supports AirPlay and Picture-in-Picture on supported devices and iOS versions.
+          </p>
+        </article>
+        <article class="faq-item">
+          <h3>How do I delete a movie?</h3>
+          <p>
+            Open the movie's detail view and use the delete option. This removes the local video file,
+            cached poster, and library entry from your device.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" style="padding-bottom: 0;">
+      <div class="section-title" style="margin-bottom: 1.5rem;">
+        <h2>Troubleshooting</h2>
+      </div>
+      <div class="faq-list">
+        <article class="faq-item">
+          <h3>Video won't play</h3>
+          <p>
+            The file may use a codec iOS doesn't decode natively. Try converting it to MP4 with H.264 video and AAC audio
+            using HandBrake or VLC on a Mac or PC, then re-import.
+          </p>
+        </article>
+        <article class="faq-item">
+          <h3>No poster or metadata found</h3>
+          <p>
+            Check your internet connection. If using TMDB, verify your API key in Settings.
+            Try refreshing metadata from the movie detail screen with a simpler title.
+          </p>
+        </article>
+        <article class="faq-item">
+          <h3>Import seems slow</h3>
+          <p>
+            Large video files take time to copy into the App sandbox, especially from network storage.
+            Importing from local device storage is fastest.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <div class="contact-card">
+      <h2 style="margin: 0 0 0.75rem; font-size: 1.25rem;">Still need help?</h2>
+      <p>
+        Open a support request on
+        <a href="https://github.com/highscorejimmy/CineLocal-Support/issues" rel="noopener">GitHub Issues</a>.
+        Include your iOS version, device model, and a description of the problem.
+        Please do not include copyrighted video files or personal media in your report.
+      </p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© 2026 CineLocal. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="support.html">Support</a>
+        <a href="https://github.com/highscorejimmy/CineLocal-Support/issues" rel="noopener">Report an Issue</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
