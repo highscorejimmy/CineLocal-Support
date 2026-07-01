@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CineLocal Privacy Policy — how we handle your data (spoiler: it stays on your device).">
+  <meta name="description" content="CineLocal Privacy Policy — how we handle your data, ads, and optional tracking.">
   <title>Privacy Policy — CineLocal</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -18,6 +18,7 @@
         <a href="index.html">Home</a>
         <a href="support.html">Support</a>
         <a href="privacy.html" class="active">Privacy</a>
+        <a href="app-privacy.html">App Privacy</a>
       </nav>
     </div>
   </header>
@@ -25,22 +26,23 @@
   <main class="container">
     <header class="page-header">
       <h1>Privacy Policy</h1>
-      <p>Last updated: June 28, 2026</p>
+      <p>Last updated: July 1, 2026</p>
     </header>
 
     <article class="prose">
       <p>
-        CineLocal ("the App") is designed to help you organize and play your personal video collection on your iPhone.
-        Your privacy is fundamental to how the App works. This policy explains what information is processed,
-        where it is stored, and what leaves your device.
+        CineLocal ("the App") helps you organize and play your personal video collection on your iPhone.
+        Your library stays on your device. This policy explains what is stored locally, what may be sent over
+        the internet, and how the optional ad-supported free version works.
       </p>
 
       <h2>Summary</h2>
       <ul>
-        <li><strong>We do not collect personal data.</strong> There are no accounts, analytics, or advertising trackers.</li>
         <li><strong>Your videos stay on your device.</strong> Imported files are copied into the App's secure sandbox.</li>
-        <li><strong>Metadata lookups are optional and outbound only.</strong> The App may query public movie databases to find posters and details.</li>
-        <li><strong>We do not sell or share your information.</strong> We have no servers that receive your library or media files.</li>
+        <li><strong>No accounts or cloud library.</strong> CineLocal does not require sign-in and does not upload your movies to our servers.</li>
+        <li><strong>Free version includes ads.</strong> Banner ads are served by Google AdMob. CineLocal+ removes ads.</li>
+        <li><strong>Optional tracking permission.</strong> The free version may ask for Apple's App Tracking Transparency (ATT) permission so ads can be more relevant. You can decline — the App still works.</li>
+        <li><strong>Metadata lookups are separate from ads.</strong> Movie search queries may be sent to public databases to fetch posters and details.</li>
       </ul>
 
       <h2>Information Stored on Your Device</h2>
@@ -49,78 +51,118 @@
         <li>Video files you choose to import</li>
         <li>Cached poster images</li>
         <li>Library metadata (titles, years, overviews, genres, ratings, and related details)</li>
-        <li>An optional TMDB API key, if you choose to provide one in Settings</li>
-        <li>App preferences stored via iOS standard local storage (UserDefaults / AppStorage)</li>
+        <li>Optional TMDB and OMDb API keys, if you provide them in Settings</li>
+        <li>App preferences via iOS standard local storage (UserDefaults / AppStorage)</li>
+        <li>Your CineLocal+ purchase status (via Apple's StoreKit)</li>
       </ul>
       <p>
-        This data remains on your device unless you delete it (for example, by removing a movie from your library
-        or uninstalling the App). Uninstalling the App removes its sandboxed data from your device.
+        This data remains on your device unless you delete it or uninstall the App. Uninstalling removes the App's
+        sandboxed data from your device.
       </p>
 
-      <h2>Information Sent Over the Internet</h2>
+      <h2>Advertising (Free Version)</h2>
+      <p>
+        If you use the free, ad-supported version of CineLocal, banner advertisements are displayed through
+        <strong>Google AdMob</strong>. Google may collect device and usage information to deliver and measure ads.
+        See <a href="https://policies.google.com/privacy" rel="noopener">Google's Privacy Policy</a>.
+      </p>
+      <p>
+        Before ads load, the App may present a consent form where required (for example, in the EU) through Google's
+        User Messaging Platform (UMP).
+      </p>
+      <p>
+        On iOS 14.5 and later, CineLocal may also show Apple's <strong>App Tracking Transparency</strong> prompt
+        with this message:
+      </p>
+      <blockquote>
+        This allows CineLocal to show more relevant ads. Your movie library is never shared with advertisers.
+      </blockquote>
+      <p>
+        If you allow tracking, the advertising identifier (IDFA) may be used for personalized ads across other
+        companies' apps and websites. If you deny tracking, ads may still appear but will be less personalized.
+        <strong>Your imported videos and library contents are never shared with advertisers.</strong>
+      </p>
+      <p>
+        Purchasing <strong>CineLocal+</strong> removes ads and stops ATT prompts used for advertising.
+      </p>
+
+      <h2>Information Sent for Metadata (Not Advertising)</h2>
       <p>
         When you import a video or refresh metadata, the App may send <strong>movie search queries</strong>
-        (derived from filenames or titles you already have locally) to third-party services in order to retrieve
-        public movie information and artwork. These requests do not include your video files.
+        (derived from filenames or titles you already have locally) to third-party services to retrieve public
+        movie information and artwork. These requests do not include your video files.
       </p>
-      <p>Third-party services the App may contact:</p>
       <ul>
         <li>
-          <strong>The Movie Database (TMDB)</strong> — used when you provide an optional TMDB API key in Settings.
-          Requests include search terms and your API key. See
-          <a href="https://www.themoviedb.org/privacy-policy" rel="noopener">TMDB's privacy policy</a>.
+          <strong>The Movie Database (TMDB)</strong> — when you provide an optional TMDB API key.
+          <a href="https://www.themoviedb.org/privacy-policy" rel="noopener">TMDB Privacy Policy</a>
         </li>
         <li>
-          <strong>Apple iTunes Search API</strong> — used as a fallback for metadata lookup when no TMDB key is set.
-          Requests include search terms only. See
-          <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple's privacy information</a>.
+          <strong>OMDb</strong> — when you provide an optional OMDb API key for Rotten Tomatoes scores.
+          <a href="https://www.omdbapi.com/" rel="noopener">OMDb</a>
+        </li>
+        <li>
+          <strong>Apple iTunes Search API</strong> — fallback metadata lookup when no TMDB key is set.
+          <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple Privacy</a>
         </li>
       </ul>
+      <p>Poster images retrieved from these services are cached locally on your device.</p>
+
+      <h2>Local Network Features</h2>
       <p>
-        Poster images retrieved from these services are downloaded and cached locally on your device for offline use.
+        CineLocal uses your local network for optional features such as Watch Together, movie transfer between
+        nearby iPhones, nearby streaming, and browsing SMB network shares. These features do not upload your
+        library to the internet. They communicate only with devices and servers on your local network that you
+        choose to connect to.
       </p>
 
       <h2>What We Do Not Collect</h2>
-      <p>CineLocal does not:</p>
+      <p>CineLocal (the developer) does not operate servers that receive your video files or personal library. We do not:</p>
       <ul>
         <li>Require or create user accounts</li>
-        <li>Upload your videos or personal files to any server operated by us</li>
-        <li>Use analytics, crash-reporting, or advertising SDKs that track you across apps</li>
-        <li>Collect your name, email address, phone number, or location</li>
-        <li>Sell, rent, or trade your information</li>
+        <li>Upload your videos to servers operated by us</li>
+        <li>Collect your name, email address, or phone number through the App</li>
+        <li>Sell or rent your movie library</li>
       </ul>
 
       <h2>Children's Privacy</h2>
       <p>
-        The App does not knowingly collect personal information from anyone, including children under 13.
-        Because no account or personal data collection is involved, the App is suitable for general audiences
-        subject to the content of videos you import yourself.
+        The App is not directed at children under 13. We do not knowingly collect personal information from children.
+        Parents and guardians control what content is imported into the App.
       </p>
 
       <h2>Data Security</h2>
       <p>
-        Your imported media and library data are protected by iOS app sandboxing. Only the App (and your device backups,
-        if enabled) can access this data. We recommend keeping your device passcode or biometric lock enabled.
+        Imported media and library data are protected by iOS app sandboxing. We recommend keeping your device
+        passcode or biometric lock enabled.
       </p>
 
       <h2>Your Choices</h2>
       <ul>
-        <li>You choose which videos to import</li>
-        <li>You can delete individual movies and their associated files at any time</li>
-        <li>You can remove your TMDB API key from Settings</li>
-        <li>You can use the App offline after initial import and metadata caching</li>
+        <li>Choose which videos to import</li>
+        <li>Delete individual movies and their files at any time</li>
+        <li>Decline App Tracking Transparency when prompted</li>
+        <li>Upgrade to CineLocal+ to remove ads</li>
+        <li>Remove optional API keys from Settings</li>
+        <li>Use the App offline after import and metadata caching</li>
       </ul>
+
+      <h2>App Store Privacy Labels</h2>
+      <p>
+        Apple's App Privacy nutrition labels for CineLocal describe the ad-supported free experience, including
+        optional tracking for personalized advertising. See our
+        <a href="app-privacy.html">App Privacy guide</a> for details aligned with App Store Connect.
+      </p>
 
       <h2>Changes to This Policy</h2>
       <p>
-        We may update this Privacy Policy from time to time. The "Last updated" date at the top of this page
-        will reflect any changes. Continued use of the App after changes are posted constitutes acceptance of the
-        updated policy.
+        We may update this Privacy Policy from time to time. The "Last updated" date at the top reflects changes.
+        Continued use of the App after changes are posted constitutes acceptance of the updated policy.
       </p>
 
       <h2>Contact</h2>
       <p>
-        If you have questions about this Privacy Policy, please open an issue on our
+        Questions about this Privacy Policy? Open an issue on our
         <a href="https://github.com/highscorejimmy/CineLocal-Support/issues" rel="noopener">GitHub support repository</a>
         or visit our <a href="support.html">Support page</a>.
       </p>
@@ -129,9 +171,10 @@
 
   <footer class="site-footer">
     <div class="container">
-      <span>© 2026 CineLocal. All rights reserved.</span>
+      <span>© 2026 Jimmy Mullins. All rights reserved.</span>
       <div class="footer-links">
         <a href="privacy.html">Privacy Policy</a>
+        <a href="app-privacy.html">App Privacy</a>
         <a href="support.html">Support</a>
         <a href="https://github.com/highscorejimmy/CineLocal-Support/issues" rel="noopener">Report an Issue</a>
       </div>

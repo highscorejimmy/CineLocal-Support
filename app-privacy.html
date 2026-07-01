@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="App Store Connect App Privacy configuration for CineLocal — tracking, ads, and review compliance.">
+  <title>App Privacy — CineLocal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html">
+        <span class="logo-icon">▶</span>
+        <span>CineLocal</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="app-privacy.html" class="active">App Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <header class="page-header">
+      <h1>App Store App Privacy</h1>
+      <p>Last updated: July 1, 2026</p>
+    </header>
+
+    <article class="prose">
+      <p>
+        CineLocal's free version includes banner ads through <strong>Google AdMob</strong> and may request
+        Apple's <strong>App Tracking Transparency (ATT)</strong> permission so ads can be more relevant.
+        The app binary includes <code>NSUserTrackingUsageDescription</code> in <code>Info.plist</code>,
+        which tells App Store Connect the app <em>may</em> ask to track users across other companies' apps and websites.
+      </p>
+
+      <div class="callout">
+        <h2>Common App Review message</h2>
+        <p>
+          <em>Your app contains NSUserTrackingUsageDescription, indicating that it may request permission to track users.
+          To submit for review, update your App Privacy response to indicate that data collected from this app will be
+          used for tracking purposes, or update your app binary and upload a new build.</em>
+        </p>
+        <p>
+          This means your <strong>App Privacy answers in App Store Connect</strong> must match what the app binary can do.
+          You do <strong>not</strong> need a new build if you correct the privacy questionnaire — unless you choose to
+          remove tracking from the app entirely (see Option B below).
+        </p>
+      </div>
+
+      <h2>Option A — Keep ads &amp; ATT (recommended)</h2>
+      <p>
+        Update App Store Connect so privacy labels reflect third-party advertising and optional cross-app tracking.
+        After saving, resubmit the same build for review.
+      </p>
+
+      <h3>Step 1 — Open App Privacy</h3>
+      <ol>
+        <li>Sign in to <a href="https://appstoreconnect.apple.com" rel="noopener">App Store Connect</a></li>
+        <li>Select <strong>Apps</strong> → <strong>CineLocal</strong></li>
+        <li>In the left sidebar, open <strong>App Privacy</strong></li>
+        <li>Click <strong>Get Started</strong> or <strong>Edit</strong></li>
+      </ol>
+
+      <h3>Step 2 — Data collection</h3>
+      <p>Answer <strong>Yes</strong> to:</p>
+      <blockquote>Do you or your third-party partners collect data from this app?</blockquote>
+      <p>Select data types collected by <strong>Third-Party Advertising</strong> (Google AdMob):</p>
+
+      <table class="privacy-table">
+        <thead>
+          <tr>
+            <th>Data type</th>
+            <th>Purposes</th>
+            <th>Linked to user?</th>
+            <th>Used for tracking?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Identifiers</strong> (Device ID)</td>
+            <td>Third-Party Advertising</td>
+            <td>No</td>
+            <td><strong>Yes</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Usage Data</strong> (Advertising Data)</td>
+            <td>Third-Party Advertising</td>
+            <td>No</td>
+            <td><strong>Yes</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Usage Data</strong> (Product Interaction)</td>
+            <td>Third-Party Advertising, Analytics</td>
+            <td>No</td>
+            <td><strong>Yes</strong></td>
+          </tr>
+          <tr>
+            <td><strong>Diagnostics</strong> (Crash Data, Performance Data)</td>
+            <td>Analytics</td>
+            <td>No</td>
+            <td>No</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        Mark <strong>Used for tracking purposes = Yes</strong> for any data type tied to personalized advertising
+        across other companies' apps or websites. That aligns with
+        <code>NSUserTrackingUsageDescription</code> and the ATT prompt shown by CineLocal.
+      </p>
+
+      <h3>Step 3 — Tracking declaration</h3>
+      <p>When asked whether data is used for tracking, answer <strong>Yes</strong>.</p>
+      <p>Apple defines tracking as linking user or device data from your app with data from other companies' apps, websites, or offline properties for targeted advertising or advertising measurement, or sharing with data brokers.</p>
+
+      <h3>Step 4 — Privacy Nutrition Label URL</h3>
+      <p>Use your public privacy policy URL in App Store Connect:</p>
+      <p><code>https://highscorejimmy.github.io/CineLocal-Support/privacy.html</code></p>
+
+      <h3>Step 5 — Publish &amp; resubmit</h3>
+      <ol>
+        <li>Save the updated App Privacy responses</li>
+        <li>Return to your app version and click <strong>Submit for Review</strong> again (no new binary required)</li>
+        <li>In Review Notes, you may add: <em>App Privacy questionnaire updated to declare third-party advertising and optional ATT-based tracking via Google AdMob.</em></li>
+      </ol>
+
+      <h2>Option B — Remove tracking from the app</h2>
+      <p>Choose this only if you do not want to declare tracking in App Store Connect.</p>
+      <ol>
+        <li>Remove <code>NSUserTrackingUsageDescription</code> from <code>Info.plist</code></li>
+        <li>Remove <code>AppTrackingTransparency</code> usage and <code>ATTrackingManager.requestTrackingAuthorization()</code> from <code>AdCoordinator.swift</code></li>
+        <li>Upload a <strong>new build</strong> to App Store Connect</li>
+        <li>Update App Privacy to reflect only non-tracking ad data (or no collection, if ads are removed entirely)</li>
+      </ol>
+      <p>
+        Ads may still appear, but they will not use the IDFA for cross-app personalization. App Review will no longer
+        require a tracking declaration solely because of <code>NSUserTrackingUsageDescription</code>.
+      </p>
+
+      <h2>What CineLocal does <em>not</em> collect</h2>
+      <ul>
+        <li>Your imported video files or library contents</li>
+        <li>Your name, email, or account credentials (there are no accounts)</li>
+        <li>Movie filenames sent to advertisers</li>
+      </ul>
+      <p>
+        Metadata lookups (TMDB, OMDb, Apple iTunes Search) are separate from advertising and are described in the
+        <a href="privacy.html">Privacy Policy</a>.
+      </p>
+
+      <h2>CineLocal+ and ads</h2>
+      <p>
+        Users who purchase <strong>CineLocal+</strong> do not see ads and are not prompted for ATT tracking permission
+        for advertising purposes. App Privacy labels still describe the free, ad-supported experience because that is
+        what a portion of users receive.
+      </p>
+
+      <h2>Related Info.plist keys</h2>
+      <ul>
+        <li><code>NSUserTrackingUsageDescription</code> — shown when requesting ATT permission for personalized ads</li>
+        <li><code>GADApplicationIdentifier</code> — Google AdMob application ID</li>
+        <li><code>SKAdNetworkItems</code> — required SKAdNetwork identifiers for ad attribution</li>
+      </ul>
+
+      <h2>Need help?</h2>
+      <p>
+        Open an issue on
+        <a href="https://github.com/highscorejimmy/CineLocal-Support/issues" rel="noopener">GitHub Issues</a>
+        with a screenshot of your App Privacy settings if review still fails after updating the questionnaire.
+      </p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <span>© 2026 Jimmy Mullins. All rights reserved.</span>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="app-privacy.html">App Privacy</a>
+        <a href="support.html">Support</a>
+        <a href="https://github.com/highscorejimmy/CineLocal-Support/issues" rel="noopener">Report an Issue</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
