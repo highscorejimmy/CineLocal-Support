@@ -1,14 +1,14 @@
 # CineLocal Support & Marketing Site
 
-Public support repository for the [CineLocal](https://github.com/highscorejimmy/CineLocal) iOS app. Hosted on GitHub Pages.
+Public support repository for the [CineLocal](https://github.com/highscorejimmy/CineLocal) iOS app. Hosted on GitHub Pages from the `main` branch, site root.
 
 ## Live Site
 
 **https://highscorejimmy.github.io/CineLocal-Support/**
 
-## App Store Connect URLs
+A pull request does not change the live site. GitHub Pages rebuilds from `main` after the pull request is merged.
 
-Use these when submitting to Apple:
+## App Store Connect URLs
 
 | Field | URL |
 |-------|-----|
@@ -18,20 +18,12 @@ Use these when submitting to Apple:
 
 ## Pages
 
-- `index.html` — Marketing landing page
-- `support.html` — FAQs, troubleshooting, contact
-- `privacy.html` — Privacy policy (required by App Store)
-- `app-privacy.html` — **App Store Connect App Privacy guide** (tracking / AdMob / ATT compliance)
+- `index.html` — Landing page
+- `support.html` — FAQs and troubleshooting
+- `privacy.html` — Privacy policy for CineLocal 2.8 (build 13)
+- `app-privacy.html` — What that version sends, and what its privacy manifest says
 
-## App Review — NSUserTrackingUsageDescription
-
-If App Review rejects the build because `NSUserTrackingUsageDescription` is present:
-
-1. Open [app-privacy.html](app-privacy.html) on the live site
-2. Follow **Option A** to update App Privacy in App Store Connect (no new build required), or **Option B** to remove tracking from the app binary
-3. Resubmit for review
-
-The free version uses Google AdMob and may request Apple's App Tracking Transparency permission for personalized ads. CineLocal+ removes ads.
+Version 2.8 does not include an advertising SDK, an App Tracking Transparency prompt, or use of the advertising identifier.
 
 ## Local Preview
 
@@ -43,4 +35,4 @@ Then visit http://localhost:8080
 
 ## Updating
 
-Edit the HTML/CSS files, commit, and push to `main`. GitHub Pages will redeploy automatically.
+Edit the HTML and CSS, commit, and merge to `main`. GitHub Pages republishes the root of `main`.
